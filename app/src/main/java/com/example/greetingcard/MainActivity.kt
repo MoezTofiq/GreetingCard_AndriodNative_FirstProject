@@ -3,14 +3,16 @@ package com.example.greetingcard
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.greetingcard.ui.theme.GreetingCardTheme
 
 class MainActivity : ComponentActivity() {
@@ -37,13 +39,15 @@ Composable requirements:
     need the Composable annotation on top of function
     function name is capitalized
     it can not return anything
+
 */
 @Composable // this is to tell the kotlin compiler that the function below is used by jetpack compose
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Surface() { // came from alt+enter -> surround with widget -> sround with widget -> delete box and add widget
+    Surface(color = Color.Cyan) { // came from alt+enter -> surround with widget -> sround with widget -> delete box and add widget
+    //added color to the backGround
         Text(
             text = "Hello, my name is $name!",
-            modifier = modifier
+            modifier = modifier.padding(24.dp)
         )
     }
 }
